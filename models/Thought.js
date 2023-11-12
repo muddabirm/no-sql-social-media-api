@@ -26,10 +26,10 @@ const thoughtSchema = new Schema({
     },
 )
 //counts the length of the thought reaction array field
-postSchema.virtual('reactionCount').get(function (){
+thoughtSchema.virtual('reactionCount').get(function (){
     return this.reactions.length
 })
 
-const User = model('thought', thoughtSchema)
+const Thought = model('thought', thoughtSchema)
 //exports thought module
 module.exports = Thought

@@ -4,12 +4,12 @@ const userSchema = new Schema({
     username: {
         type: String,
         unique: true,
-        require: true,
+        required: true,
         trim: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
         trim: true
     },
@@ -31,10 +31,10 @@ const userSchema = new Schema({
 )
 
 //creates a friend count virtual to count the length of the user's friends array
-postSchema.virtual('friendCount').get(function (){
+userSchema.virtual('friendCount').get(function (){
     return this.friends.length
 })
 
-const User = model('user', userSchema)
+const User = model('User', userSchema)
 //exports user module
 module.exports = User
