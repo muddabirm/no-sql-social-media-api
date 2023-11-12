@@ -51,6 +51,7 @@ module.exports = {
     async changeUserData (req,res){
         try {
             const userData = await User.findByIdAndUpdate(
+                //uses id to find and change the user info
                 {_id: req.params.userId},
                 {$set: req.body},
                 {runValidators: true, new: true}
