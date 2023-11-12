@@ -43,6 +43,7 @@ module.exports = {
             if (!thoughtData) {
                 res.status(500).json('no Thought with that id')
             }
+            res.status(200).json('thought deleted')
 
         } catch (error) {
             res.status(500).json(error)

@@ -41,7 +41,7 @@ module.exports = {
             if (!userData) {
                 res.status(500).json('no user with that id')
             }
-
+            res.status(200).json('user deleted')
         } catch (error) {
             res.status(500).json(error)
             
